@@ -1,28 +1,10 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.get('/users', (request, response) => {
-    console.log('Listagem');
+app.use(express.json());
+app.use(routes);
 
-
-    response.json([
-        {
-            name: 'Gustavo',
-            age: '20',
-            gender: 'Masc'
-        },
-        {
-            name: 'Marina',
-            age: '21',
-            gender: 'Fem'
-        },
-        {
-            name: 'Mateus',
-            age: '18',
-            gender: 'Masc'
-        }
-    ]);
-});
 
 app.listen(3333);
